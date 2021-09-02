@@ -1,0 +1,62 @@
+<div *ngIf="bending">
+    <div class="row">
+        <div class="col">
+            <h2 class="mb-3">{{ bending.name | uppercase }} Details</h2>
+        </div>
+        <div class="col">
+            <div class="float-end">
+                <button class="btn btn-light" (click)="goBack()">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="../../assets/bendings/{{ bending.name }}.gif" alt="{{ bending.name }}" class="card-img-top img-fluid">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"
+                        [class.waterbending]="bending.name == 'Waterbending'"
+                        [class.firebending]="bending.name == 'Firebending'"
+                        [class.earthbending]="bending.name == 'Earthbending'"
+                        [class.airbending]="bending.name == 'Airbending'">
+                        {{ bending.name }}
+                    </h5>
+                    <p class="card-text">
+                        <a href="https://avatar.fandom.com/wiki/{{ bending.name }}" target="_blank" class="card-link">
+                            <small class="text-muted">Avatar Wiki Link</small>
+                        </a>
+                    </p>
+                    <h6>General Information</h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><b>Source: </b>{{ bending.source }}</li>
+                                <li class="list-group-item"><b>Learned from: </b>{{ bending['learned from'] }}</li>
+                                <li class="list-group-item"><b>Alternative styles: </b>{{ bending['alternative styles'].join(', ') }}</li>
+                                <li class="list-group-item"><b>Weapons: </b>{{ bending.weapons.join(', ') }}</li>
+                                <li class="list-group-item"><b>Weaknesses: </b>{{ bending.weaknesses.join(', ') }}</li>
+                                <li class="list-group-item">
+                                    <b>Abilities: </b>
+                                    <ul class="list-group mt-2">
+                                        <li class="list-group-item"><em>General: </em>{{ bending.abilities.general.join(', ') }}</li>
+                                        <li class="list-group-item"><em>Advanced: </em>{{ bending.abilities.advanced.join(', ') }}</li>
+                                        <li class="list-group-item"><em>Avatar level: </em>{{ bending.abilities['avatar level'].join(', ') }}</li>
+                                        <li class="list-group-item"><em>Special techniques: </em>{{ bending.abilities['special techniques'].join(', ') }}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                    <!-- <div class="row">
+                        <div class="col">
+                            
+                        </div>
+                        <div class="col">
+                            <h6>Other Information</h6>
+                        </div>
+                    </div> -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

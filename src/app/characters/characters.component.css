@@ -1,0 +1,11 @@
+a {
+    cursor: pointer;
+}
+
+.nav > .nav-item > a {
+    color: #8b4513;
+}
+
+.nav > .nav-item > .active {
+    color: #3a3a3a;
+}

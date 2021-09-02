@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col">
+        <h3>{{ filterName }}</h3>
+    </div>
+    <div class="col">
+        <div class="dropdown float-end">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li (click)="onSelectFilter('All', 'All')"><a class="dropdown-item">All</a></li>
+                <li (click)="onSelectFilter('Waterbending', 'Waterbenders')"><a class="dropdown-item">Waterbenders</a></li>
+                <li (click)="onSelectFilter('Firebending', 'Firebenders')"><a class="dropdown-item">Firebenders</a></li>
+                <li (click)="onSelectFilter('Earthbending', 'Earthbenders')"><a class="dropdown-item">Earthbenders</a></li>
+                <li (click)="onSelectFilter('Airbending', 'Airbenders')"><a class="dropdown-item">Airbenders</a></li>
+                <li (click)="onSelectFilter('Nonbending', 'Nonbenders')"><a class="dropdown-item">Nonbenders</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-end">
+        <li class="page-item" [class.disabled]="page === 1" (click)="onSelectPage(page - 1)">
+            <a class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item" [class.active]="page === 1"><a class="page-link" (click)="onSelectPage(1)">1</a></li>
+        <li class="page-item" [class.active]="page === 2"><a class="page-link" (click)="onSelectPage(2)">2</a></li>
+        <li class="page-item" [class.active]="page === 3"><a class="page-link" (click)="onSelectPage(3)">3</a></li>
+        <li class="page-item" [class.disabled]="page === 3" (click)="onSelectPage(page + 1)">
+            <a class="page-link" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav> -->
+
+<div class="row mx-auto">
+    <div class="col-sm-3" *ngFor="let character of charactersToDisplay">
+        <a routerLink="/characters/{{ character.name }}">
+            <div class="card my-3" style="width: 18rem;">
+                    <img src="../../assets/characters/{{ character.name.split(' ').join('_') }}.png" class="card-img-top" alt="{{ character.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ character.name }}</h5>
+                    <p class="card-text">{{ character.roles[0] }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-end">
+        <li class="page-item" [class.disabled]="page === 1" (click)="onSelectPage(page - 1)">
+            <a class="page-link" [class.disabled]="page === maxPage" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <!-- Previous -->
+            </a>
+        </li>
+        <li class="page-item" [class.active]="page === 1"><a class="page-link" (click)="onSelectPage(1)">1</a></li>
+        <li class="page-item" [class.active]="page === 2" *ngIf="charactersFiltered.length > charactersToDisplayCount"><a class="page-link" (click)="onSelectPage(2)">2</a></li>
+        <li class="page-item" [class.active]="page === 3" *ngIf="charactersFiltered.length > charactersToDisplayCount * 2"><a class="page-link" (click)="onSelectPage(3)">3</a></li>
+        <li class="page-item" [class.disabled]="page === maxPage" (click)="onSelectPage(page + 1)">
+            <a class="page-link" [class.disabled]="page === maxPage" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <!-- Next -->
+            </a>
+        </li>
+    </ul>
+</nav>

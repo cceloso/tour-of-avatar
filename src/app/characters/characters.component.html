@@ -1,0 +1,19 @@
+<h2>Characters</h2>
+
+<div class="card-header mb-3">
+    <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+            <!-- aria-current="true" -->
+            <a class="nav-link" [class.active]="this.listView === true" (click)="onSelect(true)">List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [class.active]="this.listView === false" (click)="onSelect(false)">Gallery</a>
+        </li>
+    </ul>
+</div>
+
+<!-- *ngIf="this.listView === false" -->
+
+<app-characters-list *ngIf="this.listView === true" [characters]="characters"></app-characters-list>
+<app-characters-gallery *ngIf="this.listView === false" [characters]="characters"></app-characters-gallery>
+
