@@ -1,4 +1,6 @@
-# AngularJujutsuKaisen
+# AngularTourOfAvatar
+
+This is a modification of the final output for the [Angular Tour of Heroes tutorial](https://angular.io/tutorial). Instead of displaying heroes, Avatar characters and bendings are shown in the app. This was done to also practice using Bootstrap 5 with Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
