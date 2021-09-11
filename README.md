@@ -1,6 +1,6 @@
 # AngularTourOfAvatar
 
-This is a modification of the final output for the [Angular Tour of Heroes tutorial](https://angular.io/tutorial). Instead of displaying heroes, Avatar characters and bendings are shown in the app. This was done during the Saperium Internship Program 2021 to practice using Angular with Bootstrap 5 and free APIs. You may see its demo [here] (https://youtu.be/l7GgexCjqgg).
+This is a modification of the final output for the [Angular Tour of Heroes tutorial](https://angular.io/tutorial). Instead of displaying heroes, Avatar characters and bendings are shown in the app. This was done during the Saperium Internship Program 2021 to practice using Angular with Bootstrap 5 and free APIs. You may see its demo [here](https://youtu.be/l7GgexCjqgg).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
